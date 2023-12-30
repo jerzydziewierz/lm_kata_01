@@ -1,0 +1,167 @@
+{
+    "os": "Linux-5.15.0-91-generic-x86_64-with-glibc2.31",
+    "python": "3.11.0",
+    "heartbeatAt": "2023-12-30T08:25:32.617513",
+    "startedAt": "2023-12-30T08:25:31.167230",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "git/sapient/KataBasicFlax/01_flax_optax_review.ipynb",
+    "codePathLocal": null,
+    "root": "/home/mib07150/git/sapient/KataBasicFlax",
+    "git": {
+        "remote": null,
+        "commit": null
+    },
+    "email": "grey@stl-tech.co.uk",
+    "host": "ub20phy",
+    "username": "mib07150",
+    "executable": "/home/mib07150/prog/miniconda3/envs/py311/bin/python3.11",
+    "cpu_count": 12,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2408.3098750000004,
+        "min": 2200.0,
+        "max": 4100.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 4099.875,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 4099.702,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 4100.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 429.7799835205078,
+            "used": 403.01337814331055
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2060",
+            "memory_total": 12884901888
+        }
+    ],
+    "memory": {
+        "total": 31.246780395507812
+    }
+}

@@ -1,0 +1,42 @@
+wandb_version: 1
+
+this_optimizer:
+  desc: null
+  value: <function optimistic_gradient_descent at 0x7ff94c52b380>
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.0
+    cli_version: 0.16.1
+    framework: keras
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1703923587.378303
+    t:
+      1:
+      - 2
+      - 3
+      - 5
+      - 12
+      - 45
+      - 53
+      - 55
+      - 105
+      2:
+      - 2
+      - 3
+      - 5
+      - 12
+      - 45
+      - 53
+      - 55
+      - 105
+      3:
+      - 16
+      - 23
+      4: 3.11.0
+      5: 0.16.1
+      8:
+      - 1
+      - 5
+      13: linux-x86_64

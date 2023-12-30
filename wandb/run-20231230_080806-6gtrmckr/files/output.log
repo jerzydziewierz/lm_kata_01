@@ -1,0 +1,4 @@
+starting with learning_rate=5.000e-03
+500:, loss: train:-1.4, test:-1.4; a=2.00; b=2.73
+target achieved in 865  steps
+865:, loss: train:-3.0, test:-3.0; a=2.00; b=2.96
