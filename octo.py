@@ -83,6 +83,7 @@ class Octonion:
                 return Octonion(self.x + other.x)
             else:
                 if isinstance(other, float):
+                    # my bet is that this will be sufficient to produce "bias", in the sense that, there is no need to have an octonion bias; the octonian can alaways get rotated and scaled in the first phase of swiglu so that the bias gets applied as needed.
                     return Octonion(self.x + jnp.broadcast_to(jnp.array(other), self.x.shape))
         raise ValueError(f'type(other)={type(other)}')
 
