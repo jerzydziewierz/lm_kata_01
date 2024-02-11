@@ -91,7 +91,7 @@ class Octonion:
         return octo_mul(self, other)
 
     def __repr__(self):
-        return f"Octonions, shape={self.x.shape}, first one is ({self.x[0, 0]:0.1f}, {self.x[0, 1]:0.1f}i, {self.x[0, 2]:0.1f}j, {self.x[0, 3]:0.1f}k, {self.x[0, 4]:0.1f}l, {self.x[0, 5]:0.1f}li, {self.x[0, 6]:0.1f}lj, {self.x[0, 7]:0.1f}lk)"
+        return f"Octonions, shape={self.x.shape}, first one is ({self.x[0, 0]:0.1f}, i{self.x[0, 1]:0.1f}, j{self.x[0, 2]:0.1f}, k{self.x[0, 3]:0.1f}, l{self.x[0, 4]:0.1f}l, li{self.x[0, 5]:0.1f}, lj{self.x[0, 6]:0.1f}lj, lk{self.x[0, 7]:0.1f})"
 
 
 raw_null = jnp.array([0, 0, 0, 0, 0, 0, 0, 0], dtype=jnp.float32).reshape(1, 8)
