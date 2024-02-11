@@ -5,16 +5,17 @@ import jax
 def raw_mul(a, b):
     a0 = a[:, 0]
     a1 = a[:, 1]
+
     b0 = b[:, 0]
     b1 = b[:, 1]
-    b2 = b[:, 2]
+
     c0 = a0 * b0 - a1 * b1
     c1 = a0 * b1 + a1 * b0
     combined = jnp.stack([c0, c1], axis=-1)
     return combined
 
 
-def cplx_mul(a, b) -> Cplx:
+def cplx_mul(a, b):
     if isinstance(a, jnp.ndarray):
         a = Cplx(a)
     if isinstance(b, jnp.ndarray):
@@ -62,14 +63,35 @@ class Cplx:
             else:
                 if isinstance(other, float):
                     # my bet is that this will be sufficient to produce "bias", in the sense that, there is no need to have an octonion bias; the octonian can alaways get rotated and scaled in the first phase of swiglu so that the bias gets applied as needed.
-                    return Octonion(self.x + jnp.broadcast_to(jnp.array(other), self.x.shape))
+                    return Cplx(self.x + jnp.broadcast_to(jnp.array(other), self.x.shape))
         raise ValueError(f'type(other)={type(other)}')
 
     def __mul__(self, other):
         return cplx_mul(self, other)
 
+    def __rmul__(self, other):
+        return cplx_mul(self, other)
+
+    def __neg__(self):
+        return cplx_mul(self, -1)
+
+    def __abs__(self):
+        return self.call_norm()
+
     def __repr__(self):
-        return f"Complex, shape={self.x.shape}, first one is ({self.x[0, 0]:0.1f}, i{self.x[0, 1]:0.1f})"
+        return f"Complex, shape={self.x.shape}, first one is ({self.x[0, 0]:+0.1f}, i{self.x[0, 1]:+0.1f})"
+
+    @property
+    def s(self):
+        """
+        short version of the string descriptor
+        :return:
+        """
+        return f"({self.x[0, 0]:+0.1f}, i{self.x[0, 1]:+0.1f})"
+
+    @property
+    def shortstring(self):
+        return self.s
 
 
 raw_null = jnp.array([0, 0], dtype=jnp.float32).reshape(1, 2)
