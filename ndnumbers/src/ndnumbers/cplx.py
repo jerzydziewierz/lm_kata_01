@@ -50,13 +50,8 @@ def mul_cplx_cplx(a, b):
     return Cplx(c_e0, c_e1)
 
 
-
-
-
-# tu.register_pytree_node_class(csimple)
-
 @tu.register_pytree_node_class
-class Cplx:
+class Cplx:  # noqa: F811
     def __init__(self, e0=None, e1=None):
         # copy constructor
         if isinstance(e0, Cplx):
