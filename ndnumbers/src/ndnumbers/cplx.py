@@ -90,10 +90,21 @@ class Cplx:  # noqa: F811
         if isinstance(self, Cplx):
             if isinstance(other, Cplx):
                 return Cplx(self.e0 + other.e0, self.e1 + other.e1)
-            else:
-                if isinstance(other, float):
-                    # my bet is that this will be sufficient to produce "bias", in the sense that, there is no need to have an octonion bias; the octonian can alaways get rotated and scaled in the first phase of swiglu so that the bias gets applied as needed.
-                    return Cplx(self.e0 + jnp.broadcast_to(jnp.array(other), self.x.shape), self.e1)
+            elif isinstance(other, float) or isinstance(other, int):
+                """
+                my bet is that it will be sufficient to use "scalar bias", 
+                in the sense that, there is no need to have an octonion bias; 
+                the octonion can always get rotated and scaled in the first phase of swiglu, 
+                so that the bias gets applied as needed.
+                """
+                return Cplx(self.e0 + jnp.broadcast_to(jnp.array(other), self.e0.shape), self.e1)
+            elif isinstance(other, jnp.ndarray):
+                """verify the shape of `other` and if not, give a helpful error message"""
+                if other.shape == self.e0.shape:
+                    return Cplx(self.e0 + other, self.e1)
+                else:
+                    raise ValueError(f"shape mismatch: self.e0.shape={self.e0.shape}, other.shape={other.shape}")
+
         raise ValueError(f'type(other)={type(other)}')
 
     def __mul__(self, other):
@@ -111,7 +122,7 @@ class Cplx:  # noqa: F811
         # multplication may not be commutative. Preserve order:
         if isinstance(other, Cplx):
             return mul_cplx_cplx(other, self)
-        if isinstance(other, float):
+        if isinstance(other, float) or isinstance(other, int):
             return Cplx(self.e0 * other, self.e1 * other)
         if isinstance(other, jnp.ndarray):
             # scale each element of the array
